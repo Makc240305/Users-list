@@ -1,0 +1,41 @@
+@use "sass:color";
+@use 'scss-reset';
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #dfe2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus-visible {
+  outline: 2px solid #2a9d8f;
+  outline-offset: 4px;
+}
+
+.App {
+  max-width: 25rem;
+  max-height: 37.5rem;
+  margin: 3.125rem auto;
+  background-color: #fff;
+  border-radius: 1.875rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem;
+}
