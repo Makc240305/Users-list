@@ -31,13 +31,16 @@ body {
 }
 
 .App {
-  max-width: 25rem;
-  max-height: 37.5rem;
+  width: 80vw;
+  height: 80vh;
+  max-width: 21.25rem;
+  max-height:37.5rem;
   margin: 3.125rem auto;
   background-color: #fff;
   border-radius: 1.875rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   padding: 2.5rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .search {
@@ -75,6 +78,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
+    gap: 2rem;
 
     & > div {
       display: flex;
@@ -126,5 +130,37 @@ body {
         }
       }
     }
+  }
+}
+
+.send-invite-btn {
+  background-color: rgb(251, 80, 0);
+  padding: 16px 15px;
+  border-radius: 15px;
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
+  border: 0;
+  outline: none;
+  box-shadow: 0 7px 10px rgba(251, 80, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgb(255, 97, 24);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+}
+
+.skeleton-list{
+  height: calc(100% - 130px);
+  margin-top: 1.875rem;
+
+  svg{
+    margin-bottom: .9375rem;
   }
 }
