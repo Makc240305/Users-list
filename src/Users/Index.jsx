@@ -6,6 +6,9 @@ export const Users = ({
   isLoading,
   searchValue,
   onChangeSearchValue,
+  invites,
+  onClickInvite,
+  onClickSendInvites,
 }) => {
   return (
     <>
@@ -37,9 +40,19 @@ export const Users = ({
               );
             })
             .map((obj) => (
-              <User key={obj.id} {...obj} />
+              <User
+                onClickInvite={onClickInvite}
+                isInvited={invites.includes(obj.id)}
+                key={obj.id}
+                {...obj}
+              />
             ))}
         </ul>
+      )}
+      {invites.length > 0 && (
+        <button onClick={onClickSendInvites} className="send-invite-btn">
+          Send invitation
+        </button>
       )}
     </>
   );
