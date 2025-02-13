@@ -30,30 +30,35 @@ export const Users = ({
           <Skeleton />
         </div>
       ) : (
-        <ul className="users-list">
-          {items
-            .filter((obj) => {
-              const fullName = (obj.first_name + obj.last_name).toLowerCase();
-              return (
-                fullName.includes(searchValue.toLowerCase()) ||
-                obj.email.includes(searchValue.toLowerCase())
-              );
-            })
-            .map((obj) => (
-              <User
-                onClickInvite={onClickInvite}
-                isInvited={invites.includes(obj.id)}
-                key={obj.id}
-                {...obj}
-              />
-            ))}
-        </ul>
+        <>
+          <ul className="users-list">
+            {items
+              .filter((obj) => {
+                const fullName = (obj.first_name + obj.last_name).toLowerCase();
+                return (
+                  fullName.includes(searchValue.toLowerCase()) ||
+                  obj.email.includes(searchValue.toLowerCase())
+                );
+              })
+              .map((obj) => (
+                <User
+                  onClickInvite={onClickInvite}
+                  isInvited={invites.includes(obj.id)}
+                  key={obj.id}
+                  {...obj}
+                />
+              ))}
+          </ul>
+        </>
       )}
-      {invites.length > 0 && (
-        <button onClick={onClickSendInvites} className="send-invite-btn">
-          Send invitation
-        </button>
-      )}
+
+      <button
+        onClick={onClickSendInvites}
+        className="send-invite-btn"
+        disabled={!invites.length > 0}
+      >
+        Send invitation
+      </button>
     </>
   );
 };
