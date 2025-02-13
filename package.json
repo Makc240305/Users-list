@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-content-loader": "^7.0.2",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "scss-reset": "^1.4.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
