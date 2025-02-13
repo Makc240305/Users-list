@@ -1,5 +1,5 @@
 @use "sass:color";
-@use 'scss-reset';
+@use "scss-reset";
 
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
@@ -12,12 +12,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100svh;
+  height: 100dvh;
+  font-family: "Inter", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
   outline: none;
 }
 
@@ -32,9 +32,9 @@ body {
 }
 
 .App {
+  height: 75vh;
   width: 80vw;
-  height: 80vh;
-  max-width: 21.25rem;
+  max-width: 25rem;
   max-height: 37.5rem;
   margin: 3.125rem auto;
   background-color: #fff;
@@ -42,6 +42,9 @@ body {
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
   padding: 2.5rem;
   transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .search {
@@ -71,14 +74,14 @@ body {
   padding: 0;
   margin: 0;
   overflow: auto;
-  height: calc(100% - 8.125rem);
-  margin-top: 1.875rem;
+  height: 100%;
+  border-radius: 0.9375rem;
 
   li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.9375rem;
+    margin: 1rem 0;
     gap: 2rem;
 
     & > div {
@@ -106,7 +109,7 @@ body {
     h3 {
       margin: 0;
       font-weight: 900;
-      font-family: 'Merriweather', serif;
+      font-family: "Merriweather", serif;
       margin-top: 0.3125rem;
       color: #182170;
     }
@@ -129,6 +132,21 @@ body {
         }
       }
     }
+  }
+}
+
+@media (max-width: 23.4375rem) {
+  .users-list {
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      & > div {
+        flex-direction: column;
+      }
+    }
+   
   }
 }
 
@@ -194,6 +212,11 @@ body {
   &:active {
     transform: translateY(0.125rem);
     box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 }
 
